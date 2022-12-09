@@ -1,5 +1,19 @@
-import { createCategoriesController, deleteCategoriesController, listCategoriesController, listCategoriesIdController, updateCategoriesController } from "./categories.controller";
-import { createProductsController, listProductsController, listProductsIdController, listProductsWithCategoriesIdController } from "./products.controller";
+import {
+    createCategoriesController,
+    deleteCategoriesController,
+    listCategoriesController,
+    listCategoriesIdController,
+    updateCategoriesController
+}
+    from "./categories.controller";
+import {
+    createProductsController,
+    deleteProductsController,
+    listProductsController,
+    listProductsIdController,
+    listProductsWithCategoriesIdController,
+    updateProductsController
+} from "./products.controller";
 
 export {
     listCategoriesController,
@@ -10,5 +24,7 @@ export {
     updateCategoriesController,
     deleteCategoriesController,
     listProductsIdController,
-    listProductsWithCategoriesIdController
+    listProductsWithCategoriesIdController,
+    deleteProductsController,
+    updateProductsController
 }

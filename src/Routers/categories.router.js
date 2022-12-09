@@ -1,15 +1,14 @@
 import { Router } from "express";
-import { createCategoriesController, listCategoriesController, listCategoriesIdController, updateCategoriesController, deleteCategoriesController } from "../Controller";
-import { existCategories, findCategoriesMiddleware, validateSchemaMiddleware } from "../Middleware";
-
+import * as Controller from "../Controller"
+import * as Middleware from "../Middleware";
 import { createCategoriesShape } from "../schema";
 
 const categoriesRouter = Router()
 
-categoriesRouter.get("", listCategoriesController)
-categoriesRouter.get("/:id", findCategoriesMiddleware, listCategoriesIdController)
-categoriesRouter.post("", validateSchemaMiddleware(createCategoriesShape), existCategories, createCategoriesController)
-categoriesRouter.patch("/:id", validateSchemaMiddleware(createCategoriesShape), findCategoriesMiddleware, updateCategoriesController)
-categoriesRouter.delete("/:id", findCategoriesMiddleware, deleteCategoriesController)
+categoriesRouter.get("", Controller.listCategoriesController)
+categoriesRouter.get("/:id", Middleware.findCategoriesMiddleware, Controller.listCategoriesIdController)
+categoriesRouter.post("", Middleware.validateSchemaMiddleware(createCategoriesShape), Middleware.existCategories, Controller.createCategoriesController)
+categoriesRouter.patch("/:id", Middleware.validateSchemaMiddleware(createCategoriesShape), Middleware.findCategoriesMiddleware, Controller.updateCategoriesController)
+categoriesRouter.delete("/:id", Middleware.findCategoriesMiddleware, Controller.deleteCategoriesController)
 
 export default categoriesRouter

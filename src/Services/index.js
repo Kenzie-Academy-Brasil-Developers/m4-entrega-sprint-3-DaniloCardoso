@@ -7,7 +7,8 @@ import updateCategoriesService from "./categories/updateCategories.service";
 import deleteCategoriesService from "./categories/deleteCategories.service";
 import listProductsIdService from "./products/listCategoriesId.service";
 import listProductsWithCategoriesIdService from "./products/listProductsWithCategoriesId.service";
-
+import deleteProductsService from "./products/deleteProducts.service";
+import updateProductsService from "./products/updateProducts.service";
 export {
     listCategoriesService,
     createCategoriesService,
@@ -17,5 +18,7 @@ export {
     updateCategoriesService,
     deleteCategoriesService,
     listProductsIdService,
-    listProductsWithCategoriesIdService
+    listProductsWithCategoriesIdService,
+    deleteProductsService,
+    updateProductsService
 }
